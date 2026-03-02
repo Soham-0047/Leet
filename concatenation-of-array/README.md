@@ -4,7 +4,7 @@
 |---|---|
 | **Difficulty** | ⚪ Unknown |
 | **Language** | Cpp |
-| **Solved** | 2026-02-27 |
+| **Solved** | 2026-03-02 |
 | **LeetCode** | [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/) |
 
 ## Tags
@@ -27,14 +27,14 @@ See [`concatenation-of-array.cpp`](./concatenation-of-array.cpp) for the full so
 class Solution {
 public:
    vector<int> getConcatenation(vector<int>& nums) {
+    
     int n = nums.size();
-    vector<int> tmp(2 * n);
-
-    for(int i = 0; i < n; i++) {
+    vector<int>tmp(2*n);
+    for(int i=0;i<n;i++){
         tmp[i] = nums[i];
-        tmp[i + n] = nums[i];
+        tmp[n+i] = nums[i];
     }
-// added
+
     return tmp;
 }
 };
