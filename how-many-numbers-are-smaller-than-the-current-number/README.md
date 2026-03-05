@@ -39,13 +39,13 @@ public:
 
         //     tmp[i] = count;
         // }
-
         // return tmp;
 
         // first create a sorted array
+        // With T.C = O(nlogn)
         vector<int>sortArray = nums;
         sort(sortArray.begin(), sortArray.end());
-        // 1,2,2,3,8
+
         unordered_map<int,int>mp;
 
         for(int i=0;i<n;i++){
