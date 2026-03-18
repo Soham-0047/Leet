@@ -30,18 +30,18 @@ public:
        // prices the list
        //8 4 6 2 3
        int n = prices.size();
-    vector<int>fp(n);
+    stack<int>st;
+    vector<int>res = prices;
     for(int i=0;i<n;i++){
-        fp[i] = prices[i]; //default ones
-        for(int j = i+1;j<n;j++){
-            if(prices[j] <= prices[i]){
-                fp[i] = (prices[i] - prices[j]);
-                break;
+        while(!st.empty() && prices[st.top()] >= prices[i]){
+            res[st.top()] -= prices[i]; 
+            st.pop();
             }
-        }
+        st.push(i);
     }
 
-    return fp;
+
+    return res;
     }
 };
 ```
