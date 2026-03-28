@@ -1,6 +1,6 @@
-// Final Prices With a Special Discount in a Shop
+// Final Prices With a Special Discount in a Shop | Easy
 // https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
-// Solved: 2026-03-18
+// Solved: 2026-03-28
 //
 class Solution {
 public:
