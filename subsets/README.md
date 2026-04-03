@@ -4,7 +4,7 @@
 |---|---|
 | **Difficulty** | 🟡 Medium |
 | **Language** | Cpp |
-| **Solved** | 2026-03-31 |
+| **Solved** | 2026-04-03 |
 | **LeetCode** | [Subsets](https://leetcode.com/problems/subsets/) |
 
 ## Tags
@@ -48,21 +48,23 @@ See [`subsets.cpp`](./subsets.cpp) for the full solution.
 ```cpp
 class Solution {
 public:
+    void calculate(vector<int>&v,vector<int>&cur, vector<vector<int>>&res, int i){
+        int n= v.size();
+        if(i == n){
+            res.push_back(cur);
+            return;
+        }
+
+        cur.push_back(v[i]);
+        calculate(v,cur,res,i+1);
+        cur.pop_back();
+        calculate(v,cur,res,i+1);
+    }
     vector<vector<int>> subsets(vector<int>& nums) {
         int n = nums.size();
         vector<vector<int>> result;
-
-        for(int i=0; i < (1 << n);i++){
-            vector<int>subset;
-            for(int j=0;j<n;j++){
-                if(i & (1 << j)){
-                subset.push_back(nums[j]);
-            }
-            }
-
-             result.push_back(subset);
-        }
-
+        vector<int>cur;
+        calculate(nums,cur,result,0);
         return result;
     }
 };
