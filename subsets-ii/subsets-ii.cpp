@@ -4,21 +4,27 @@
 //
 class Solution {
 public:
-    void calculate(vector<int>&v,vector<int>&curr,vector<vector<int>>&ans,int i){
-        int n= v.size();
-        ans.push_back(curr);
-        for(int j=i; j<n; j++){
-            if(j > i && v[j] == v[j-1]) continue;
-            curr.push_back(v[j]);
-            calculate(v,curr,ans,j+1);
+
+    void calculateSum(vector<int>&v, vector<vector<int>>&ans, vector<int>&curr, int target, int i){
+        // size of the array
+        int n = v.size();
+        // base case
+        if(i == n){
+            if(target == 0) ans.push_back(curr);
+            return;
+        }
+        if(v[i] <= target){
+            curr.push_back(v[i]);
+            calculateSum(v,ans,curr,target - v[i],i);
             curr.pop_back();
         }
+        calculateSum(v,ans,curr,target,i+1);
+
     }
-    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        vector<int>curr;
-        vector<vector<int>>ans;
-        calculate(nums,curr,ans,0);
-        return ans;
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+      vector<int>curr;
+      vector<vector<int>>res;
+     calculateSum(candidates,res,curr,target,0);
+     return res;
     }
 };
