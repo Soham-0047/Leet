@@ -1,6 +1,6 @@
 // Maximum Number of Jumps to Reach the Last Index | Medium
 // https://leetcode.com/problems/maximum-number-of-jumps-to-reach-the-last-index/
-// Solved: 2026-05-10
+// Solved: 2026-05-13
 //
 class Solution {
 public:
