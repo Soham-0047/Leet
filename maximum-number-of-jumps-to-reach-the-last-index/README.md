@@ -4,7 +4,7 @@
 |---|---|
 | **Difficulty** | 🟡 Medium |
 | **Language** | Cpp |
-| **Solved** | 2026-05-10 |
+| **Solved** | 2026-05-13 |
 | **LeetCode** | [Maximum Number of Jumps to Reach the Last Index](https://leetcode.com/problems/maximum-number-of-jumps-to-reach-the-last-index/) |
 
 ## Tags
