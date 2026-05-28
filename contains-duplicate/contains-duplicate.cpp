@@ -32,7 +32,7 @@ public:
         return false;
     }
     bool containsDuplicate(vector<int>& nums) {
-        bool l = optimized1(nums);
+        bool l = optimized2(nums);
         return l;
     }
 };
