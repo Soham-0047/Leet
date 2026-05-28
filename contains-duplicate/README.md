@@ -78,7 +78,7 @@ public:
         int n = v.size();
         sort(v.begin(),v.end());
 
-        for(int i=1;i<v.size(),i++){
+        for(int i=1;i<n;i++){
             if(v[i-1] == v[i]) return true;
         }
 
