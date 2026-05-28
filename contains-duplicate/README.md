@@ -73,6 +73,7 @@ public:
         return false;
     }
 
+    // O(nlogn) and s.c based on the sorting technique
     bool optimized2(vector<int>&v){
 
         int n = v.size();
@@ -84,8 +85,20 @@ public:
 
         return false;
     }
+
+    bool optimized3(vector<int>&v){
+        int n = v.size();
+        unordered_set<int>s;
+        for(auto it: v){
+            if(s.count(it)) return true;
+
+            s.insert(it);
+        }
+
+        return false;
+    }
     bool containsDuplicate(vector<int>& nums) {
-        bool l = optimized2(nums);
+        bool l = optimized3(nums);
         return l;
     }
 };
