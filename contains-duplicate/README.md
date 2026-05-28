@@ -76,7 +76,13 @@ public:
     bool optimized2(vector<int>&v){
 
         int n = v.size();
-        
+        sort(v.begin(),v.end());
+
+        for(int i=1;i<v.size(),i++){
+            if(v[i-1] == v[i]) return true;
+        }
+
+        return false;
     }
     bool containsDuplicate(vector<int>& nums) {
         bool l = optimized1(nums);
