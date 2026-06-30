@@ -58,7 +58,7 @@ public:
         for(int i=0;i<n;i++){
             mp[nums[i]]++;
         }
-        for(auto i : mp){
+        for(const auto &i : mp){
             if(i.second > n/2){
                 return i.first;
             }
